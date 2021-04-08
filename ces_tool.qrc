@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/ces_tool">
+        <file alias="icon">resources/ces_tool.ico</file>
+    </qresource>
+</RCC>

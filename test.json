@@ -1,0 +1,211 @@
+{
+  "programs": [
+    {
+      "name": "Total Commander",
+      "from": "\\\\cw01.contiwan.com\\root\\Loc\\bbuv\\did35005\\PUBLIC\\Tool\\WindowsCommander\\Installation\\tcmd922ax64.exe",
+      "to": "C:/aici/Total Commander/tcmd922ax64.exe",
+      "register": "Total Commander",
+      "type": "install",
+      "checksum": "",
+	"setenv":"DIR_TOTALCMD"
+    },
+    {
+      "name": "CMake",
+      "from": "//cw01/root/Loc/bbuv/did35005/PUBLIC/Tool/CMake/cmake-2.8.12.2-win32-x86.exe",
+      "to": "C:/aici/CMake/cmake-2.8.12.2-win32-x86.exe",
+      "register": "CMake",
+      "type": "install",
+      "checksum": "",
+	"setenv":"DIR_CMAKE_2_8_12_BIN"
+    },
+    {
+      "name": "VISUAL STUDIO",
+      "from": "//cw01/root/Loc/bbuv/did35005/PUBLIC/Tool/Visual_Studio/Installation/BuildTools2017/vs_community__429453522.1489651985 (1).exe",
+      "to": "C:/aici/VISUAL STUDIO/vs_community__429453522.1489651985.exe",
+      "register": "VISUAL STUDIO",
+      "type": "install",
+      "checksum": "",
+	"setenv":"DIR_DEVSTUDIO_NET_12"
+    },
+    {
+      "name": "Stack Analysis Viewer",
+      "from": "//cw01.contiwan.com/Root/Loc/bbuv/did35005/PUBLIC/Tool/StackAnalyzer/CDS.SW.TOL.StackAnalysis_Dev_ViewerTool.V2.3.20.30.pre/StackAnalysisViewer_setup.exe",
+      "to": "C:/aici/Stack Analysis Viewer/StackAnalysisViewer_setup.exe",
+      "register": "Stack Analysis Viewer",
+      "type": "install",
+      "checksum": "",
+	"setenv":"DIR_STACKVIEWER_2_03"
+    },
+    {
+      "name": "VisuFrwk",
+      "from": "//cw01.contiwan.com/root/Loc/bbuv/did35005/PUBLIC/Tool/visufrwk/V01.00.23.2.7z",
+      "to": "C:/aici/VisuFrwk/V01.00.23.2.7z",
+      "register": "VisuFrwk",
+      "type": "archive",
+      "checksum": "d41d8cd98f00b204e9800998ecf8427e",
+	"setenv":"V01.00.15.4"
+    },
+    {
+      "name": "Perl",
+      "from": "\\\\cw01.contiwan.com\\root\\Loc\\bbuv\\did35005\\PUBLIC\\Tool\\Perl\\ActivePerl-5.28.1.0000-MSWin32-x64\\ActivePerl-5.28.1.0000-MSWin32-x64-73652b8c.exe",
+      "to": "C:/aici/Perl/ActivePerl-5.28.1.0000-MSWin32-x64-73652b8c.exe",
+      "register": "ActivePerl",
+      "type": "install",
+      "checksum": "",
+	"setenv":"DIR_PERL_5_12_4_BIN"
+    },
+    {
+      "name": "Python",
+      "from": "\\\\cw01.contiwan.com\\root\\Loc\\bbuv\\did35005\\PUBLIC\\Tool\\Python\\Installation\\Python_installer_3.7.2\\python-3.7.2-amd64.exe",
+      "to": "C:/aici/Python/V01.00.23.2.7z",
+      "register": "Python",
+      "type": "install",
+      "checksum": "",
+	"setenv":"DIR_PYTHON_2_7_3"
+    },
+    {
+      "name": "QAC",
+      "from": "\\\\cw01.contiwan.com\\root\\Loc\\bbuv\\did35005\\PUBLIC\\Tool\\QA_C\\Installations\\QAC_8.1.2\\QAC-8.1.2-R-Win.exe",
+      "to": "C:/aici/QAC/QAC-8.1.2-R-Win.exe",
+      "register": "QA C Source Code",
+      "type": "install",
+      "checksum": "",
+	"setenv":"DIR_QAC_8_1_2"
+    },
+    {
+      "name": "Imagix",
+      "from": "\\\\cw01.contiwan.com\\root\\Loc\\bbuv\\did35005\\PUBLIC\\Tool\\Imagix\\Installation\\v7.4.7\\imgx_win64.exe",
+      "to": "C:/aici/Imagix/imgx_win64.exe",
+      "register": "Imagix",
+      "type": "install",
+      "checksum": "",
+	"setenv":"DIR_IMAGIX_7_47"
+    },
+    {
+      "name": "Klocwork",
+      "from": "\\\\cw01.contiwan.com\\root\\Loc\\bbuv\\did35005\\PUBLIC\\Tool\\Klocwork\\Installations\\10.0SR7\\kw-server-installer.10.0.7.16712.windows.exe.zip",
+      "to": "C:/aici/Klocwork/kw-server-installer.10.0.7.16712.windows.exe.zip",
+      "register": "Klocwork",
+      "type": "archive",
+      "checksum": "",
+	"setenv":"DIR_KLOCWORK_CLIENT_10_0SR3"
+    },
+    {
+      "name": "Proseco",
+      "from": "\\\\cw01.contiwan.com\\Root\\Loc\\bbuv\\did35005\\PUBLIC\\Tool\\Proseco\\jre-7u75-windows-x64.exe",
+      "to": "C:/aici/Proseco/jre-7u75-windows-x64.exe",
+      "register": "Proseco",
+      "type": "install",
+      "checksum": "",
+	"setenv":"VARIANT"
+    },
+    {
+      "name": "Doxygen",
+      "from": "\\\\cw01.contiwan.com\\Root\\Loc\\bbuv\\did35005\\PUBLIC\\Tool\\doxygen\\installation\\v1.7.4\\doxygen-1.7.4-setup.exe",
+      "to": "C:/aici/Doxygen/doxygen-1.7.4-setup.exe",
+      "register": "Doxygen",
+      "type": "install",
+      "checksum": "",
+	"setenv":"DIR_DOXYGEN_1_74"
+    },
+    {
+      "name": "7zip",
+      "from": "\\\\cw01.contiwan.com\\root\\Loc\\bbuv\\did35005\\PUBLIC\\Tool\\7-Zip\\v16.02\\7z1602-x64.exe",
+      "to": "C:/aici/7zip/7z1602-x64.exe",
+      "register": "SY0000799",
+      "type": "install",
+      "checksum": "",
+	"setenv":"DIR_7ZIP_160"
+    },
+    {
+      "name": "QAC++",
+      "from": "\\\\cw01.contiwan.com\\root\\Loc\\bbuv\\did35005\\PUBLIC\\Tool\\QA_CPP\\Installations\\QACPP2.5\\QACPP-2.5-Win.exe",
+      "to": "C:/aici/QAC++/QACPP-2.5-Win.exe",
+      "register": "QA C++ Source Code",
+      "type": "message",
+      "checksum": "",
+	"setenv":"DIR_QACPP_2_5"
+    },
+    {
+      "name": "MKS",
+      "from": "\\\\cw01.contiwan.com\\root\\Loc\\bbuv\\did35005\\PUBLIC\\Tool\\MKS\\ZIP_Client\\IntegrityClient11.0_PB3.zip",
+      "to": "C:/aici/MKS/IntegrityClient11.0_PB3.zip",
+      "register": "QA C++ Source Code",
+      "type": "archive",
+      "checksum": "",
+	"setenv":"DIR_MKS_10_5"
+    },
+    {
+      "name": "Putty",
+      "from": "\\\\cw01.contiwan.com\\root\\Loc\\bbuv\\did35005\\PUBLIC\\Tool\\Putty\\v0.67\\putty-0.67-installer.msi",
+      "to": "C:/aici/Putty/putty-0.67-installer.msi",
+      "register": "Putty",
+      "type": "install",
+      "checksum": "",
+	"setenv":"DIR_PUTTY"
+    },
+    {
+      "name": "CTC",
+      "from": "\\\\cw01\\root\\Loc\\bbuv\\did35005\\PUBLIC\\Tool\\CTC\\Installation\\v7.3.1_google_test_only\\setup.exe",
+      "to": "C:/aici/CTC/setup.exe",
+      "register": "CTC",
+      "type": "install",
+      "checksum": "",
+	"setenv":"DIR_CTC_6_55"
+    },
+    {
+      "name": "BEYOND COMPARE",
+      "from": "//cw01/root/Loc/bbuv/did35005/PUBLIC/Tool/BeyondCompare/Installation/3.3.7/BCompare-3.3.7.15876.exe",
+      "to": "C:/aici/BEYOND COMPARE/BCompare-3.3.7.15876.exe",
+      "register": "Beyond Compare",
+      "type": "install",
+      "checksum": "",
+	"setenv":"DIR_BEYONDCOMPARE_3"
+    },
+    {
+      "name": "UNDERSTAND-C/C++",
+      "from": "//cw01/root/Loc/bbuv/did35005/PUBLIC/Tool/UnderstandC/Installation/UnderstandC_V4.0/Understand-4.0.832-Windows-64bit.exe",
+      "to": "C:/aici/UNDERSTAND-C/Understand-4.0.832-Windows-64bit.exe",
+      "register": "Understand",
+      "type": "install",
+      "checksum": "",
+	"setenv":"DIR_UNDERSTAND_4_0_832"
+    },
+    {
+      "name": "JAVA",
+      "from": "//cw01/root/Loc/bbuv/did35005/PUBLIC/Tool/Java/java_sun/jre-8u131/jre-8u131-windows-x64.exe",
+      "to": "C:/aici/JAVA/jre-8u131-windows-x64.exe",
+      "register": "Java",
+      "type": "install",
+      "checksum": "",
+	"setenv":"DIR_JAVA_1_7_0_75_BIN"
+    },
+    {
+      "name": "UNIX TOOLS",
+      "from": "//cw01/root/Loc/bbuv/did35005/PUBLIC/Tool/Msys/msys-1.0.17/msys-1.0.17.exe",
+      "to": "C:/aici/UNIX TOOLS/msys-1.0.17.exe",
+      "register": "NOT FOUND",
+      "type": "install",
+      "checksum": "",
+	"setenv":"DIR_MSYS_1_0_17_BIN"
+    },
+    {
+      "name": "GCC",
+      "from": "//cw01/root/Loc/bbuv/did35005/PUBLIC/Tool/tdm-gcc/V4.9.2_tdm-gcc/tdm-gcc-4.9.2.exe",
+      "to": "C:/aici/GCC/tdm-gcc-4.9.2.exe",
+      "register": "NOT FOUND",
+      "type": "install",
+      "checksum": "",
+	"setenv":"DIR_GCC_TDM_4_9_2"
+    },
+    {
+      "name": "Language tools - MULTI2000",
+      "from": "//cw01/root/Loc/bbuv/did35005/PUBLIC/V850/Tool/Multi2000/v7.1.4_2017.1.5/ginstall.exe",
+      "to": "C:/aici/Language tools - MULTI2000/ginstall.exe",
+      "register": "NOT FOUND",
+      "type": "install",
+      "checksum": "",
+	"setenv":"DIR_MULTI_V850_6_14_2013_55_patch_2016_04_08"
+    }
+  ]
+}

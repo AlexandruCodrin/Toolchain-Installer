@@ -1,0 +1,251 @@
+@if "%ECHO_MODE%"=="" set "ECHO_MODE=off"
+@echo %ECHO_MODE%
+rem    Filename : setenv.bat
+rem Description : logical software tool path project specific configuration settings
+rem      Author : Ladislav Cezner, Matthias Fecher
+rem      Config : configuration
+rem     Release : see ide/core/version
+rem   Copyright : (c) 2007-2016 Continental Automotive GmbH, ID RD SW QE
+rem    Revision : $Revision:$
+rem ----------------------------------------------------------------------------------------------
+rem     History : @SQELog:$
+rem ==============================================================================================
+rem Specify which tool environment you expect for your project. Use "logical path variables"
+rem from setenv_host to keep tool environment settings independent from host.
+rem To get scripts running you have to set at least:
+rem - DIR_UNIXTOOLS_BIN
+rem - DIR_PERL_BIN
+rem - DIR_xxxxx      (xxxxx - platform specific language tool name)
+
+rem NOTE: using corresponding environment variables from setenv_host
+pushd "%CD%"
+if exist "%ALLUSERSPROFILE%\setenv_host.bat" (call "%ALLUSERSPROFILE%\setenv_host.bat" || exit /b 1) else (call "%SystemRoot%\setenv_host.bat" || exit /b 1)
+popd
+
+rem generated contributions for setenv - included here, used below
+rem call batches relative to setenv location no matter where it was called from
+if exist %~dp0..\..\adapt\gen\arbor\ArborCfg.bat call %~dp0..\..\adapt\gen\arbor\ArborCfg.bat || exit /b 1
+if exist %~dp0..\..\ide\gen\setenv_gen.bat       call %~dp0..\..\ide\gen\setenv_gen.bat || exit /b 1
+
+
+rem ############################ global settings ##############################
+
+rem NOTE: number of parallel processes for parallel make build process
+rem NOTE: should be set to number of cores +1 (0 means autodetect)
+set PARALLEL_PROCESSES=%PARALLEL_PROCESSES_HOST%
+rem NOTE: number of parallel processes for parallel QAC/QAC++ analysis
+set PARALLEL_PROCESSES_QA=%PARALLEL_PROCESSES_QA_HOST%
+
+rem NOTE: deactivates pause in batch files if set to 0
+set BATCH_PAUSE=%BATCH_PAUSE_HOST%
+
+
+rem ############################ common settings ##############################
+
+rem ------- CMake ---------------------------------
+set DIR_CMAKE_BIN=%DIR_CMAKE_2_8_12_BIN%
+
+rem ------- VISUAL STUDIO -------------------------
+set MSVC_VERSION=DIR_DEVSTUDIO_NET_12
+set DIR_DEVSTUDIO_NET=%DIR_DEVSTUDIO_NET_12%
+
+rem StWa: path to msbuild.exe is now obtained from registry by tool\cmake\adapt\getmsbuild.cmd 
+
+rem ------- VisuFrwk ------------------------------
+set VISUFRWK_VERSION=V01.00.15.4
+
+rem ------- PERL ----------------------------------
+set DIR_PERL_BIN=%DIR_PERL_5_12_4_BIN%
+
+rem ------- UNIX TOOLS ----------------------------
+set DIR_UNIXTOOLS_BIN=%DIR_MSYS_1_0_17_BIN%
+
+rem ------- 7zip ----------------------------------
+set DIR_7ZIP=%DIR_7ZIP_160%
+
+rem ------- PYTHON --------------------------------
+set DIR_PYTHON3=%DIR_PYTHON_2_7_3%
+
+rem python version selected(Visufrwk)
+set DIR_TRACE_PYTHON=%DIR_PYTHON3%
+
+rem ------- PATH extension --------------------------------
+rem Extend PATH variable to let visufrwk.exe and trace model find all required Qt and python libs
+rem Do it only once if setenv called multiple times
+
+if not "%SETENV_EXEC%"=="" goto skippathextend
+set "PATH=%~dp0\..\..\pkg\trace\tool\trctool\core\;%PATH%"
+:skippathextend
+
+rem ------- JAVA ----------------------------------
+rem NOTE: JAVA portable tool, not java maintained by LanDesk
+set DIR_JAVA_BIN=%DIR_JAVA_1_7_0_75_BIN%
+
+rem ------- UNDERSTAND-C/C++ ----------------------
+rem NOTE: set subdir to bin\pc-win[95|32|64] depending on version
+set DIR_UNDERSTAND=%DIR_UNDERSTAND_4_0_832%
+set UNDC_EXEDIR=bin\pc-win64
+
+rem ------- QAC -----------------------------------
+set DIR_QAC=%DIR_QAC_8_1_2%
+
+rem ------- QAC++ ---------------------------------
+set DIR_QACPP=%DIR_QACPP_2_5%
+
+rem ------- IMAGIX --------------------------------
+set DIR_IMAGIX=%DIR_IMAGIX_7_47%
+
+rem ------- STACK ANALYSIS VIEWER -----------------
+set DIR_STACKVIEWER=%DIR_STACKVIEWER_2_03%
+
+rem ------- KLOCWORK ------------------------------
+set DIR_KLOCWORK_CLIENT=%DIR_KLOCWORK_CLIENT_10_0SR3%
+set DIR_KLOCWORK_SERVER=%DIR_KLOCWORK_SERVER_10_0%
+
+rem ------- MS ACCESS -----------------------------
+set DIR_MSACCESS=%DIR_MSACCESS_2007%
+
+rem ------- MKS -----------------------------------
+set DIR_MKS=%DIR_MKS_10_5%
+
+rem ------- EASYCASE ------------------------------
+set DIR_EASYCASE=%DIR_EASYCASE_6_5%
+
+rem ------- PROSECO -------------------------------
+set PROSECO_SDI=pkg/admin/adapt/%VARIANT%/%VARIANT%.sdi
+rem oil file defined by arbor in JCP
+rem set PROSECO_OIL=adapt/SYSTEM_PROSECO.oil
+
+rem ------- CTC -----------------------------------
+set DIR_CTC=%DIR_CTC_6_55%
+set CTC_TOOL=%DIR_CTC%\ctc.exe
+set CTC_TOOL_ARGS=-i d -n ide\tool\smate\ctc\tmp\mon.sym -c ide\tool\smate\ctc\adapt\com\ctc.ini
+set CTCOPTS=%CTC_TOOL_ARGS%
+set CTCHOME=%DIR_CTC%
+
+rem ------- MAP TOOL ------------------------------
+set DIR_MAPTOOL=%DIR_MAPTOOL_123%
+
+rem ------- TEXTEDITOR ----------------------------
+rem NOTE: e.g. notepad.exe - tool must accept file name as argument
+set TEXTEDITOR_TOOL=%TEXTEDITOR_TOOL_HOST%
+
+rem ------- TOTAL COMMANDER -----------------------
+set TOTALCMD_TOOL=%DIR_TOTALCMD%\TOTALCMD.EXE
+
+rem ------- BEYOND COMPARE ------------------------
+set BEYONDCOMPARE_TOOL=%DIR_BEYONDCOMPARE_3%\BCompare.exe
+
+rem ------- PUTTY ---------------------------------
+set PUTTY_TOOL=%DIR_PUTTY%\putty.exe
+
+rem ------- DOXYGEN -------------------------------
+set DIR_DOXYGEN=%DIR_DOXYGEN_1_74%
+set DIR_MIKTEX=%DIR_MIKTEX_2_9%
+set DIR_GRAPHVIZ_BIN=%DIR_GRAPHVIZ_2_36_BIN%
+
+
+rem ######################## V850 specific settings ###########################
+
+rem ------- Language tools - MULTI2000 ------------
+set DIR_MULTI=%DIR_MULTI_V850_6_14_2013_55_patch_2016_04_08%
+set DIR_GHSINT_JCP2016=ghsint_JCP2016
+
+rem NOTE: set path to MULTI IDE:
+set DIR_MULTI_IDE=%DIR_MULTI%
+rem set DIR_MULTI_IDE=%DIR_MULTI%\_ide
+
+rem ------- FLASH TOOL ----------------------------
+set DIR_FLASH_TOOL=%DIR_MULTI_IDE%
+set FLASH_TOOL=%DIR_FLASH_TOOL%\multi.exe
+rem set DIR_FLASH_TOOL=%DIR_NECV850_FLASH_TOOL_V2_18%
+rem set FLASH_TOOL=%DIR_NECV850_FLASH_TOOL_V2_18%\FP4.exe
+rem set DIR_FLASH_TOOL=%DIR_NECV850_FLASH_TOOL_V1_50%
+rem set FLASH_TOOL=%DIR_NECV850_FLASH_TOOL_V1_50%\bin\PG-FPL\FPL.exe
+
+rem ------- NEC - IECUBE/IECUBE2 ------------------
+rem set DIR_DEV_FILE=%DIR_MULTI%\v850e
+rem DIR_DEV_FILE=ide\adapt\debug
+set CONTROL_PRIFIX=dr7f70
+set DIR_DEV_FILE=pkg\driver\pkg\hwheader\pkg\%CONTROL_PRIFIX%%JCP2016_CPU%\core\dvf
+
+
+rem NOTE: set this for QB-V850MINIL and V850E/DX3:
+rem set IE850_JCNDREGINIT=320
+
+rem ------- SYMBOLGENERATOR -----------------------
+set DIR_SYMGEN_TOOL=%DIR_DBG2SYM_REV560151%
+
+rem ------- OIL TOOL ------------------------------
+rem NOTE: The name of the OIL_FILE is configured in selectOIL.bat, which is a project-specific
+rem       configuration file. This allows to keep (without editing this setenv.bat) 
+rem       the tool version selections but change the project-specific name of the oil-file.
+rem       So here, you only need to define the path where selectOIL.bat is found in your project
+rem       (which allows to use it from a used item (MKS or PVCS) which collects project specifica.
+rem
+set DIR_SELECTOIL=pkg\os\pkg\aros\tool\oil\adapt
+
+@if EXIST %DIR_SELECTOIL%\selectOIL.bat (
+call %DIR_SELECTOIL%\selectOIL.bat || exit /b 1
+)
+
+rem Relative path (from <project root>\imp) to the Operating system package (e.g. aros)
+rem which usually contains the OIL-Tool and the OIL-makefile (but not the Oil-file).
+rem It is for example influenced by using an OS-subssysten or not.
+set DIR_OSPACKAGE=pkg\os\pkg\aros
+
+rem Path to the oil tool,
+rem  usually relative to os-package or via the setenv_host.bat.
+set DIR_OIL=%DIR_OSPACKAGE%\tool\oil\core\OilTool
+set OIL_MAKEFILE=%DIR_OSPACKAGE%\tool\oil\adapt
+set OIL_TOOL=%DIR_OIL%\OilCfg.exe
+
+rem ------------ GCC ------------------------------
+set DIR_GCC=%DIR_GCC_TDM_4_9_2%
+
+rem ------- DIO TOOL ------------------------------
+set DIO_PORT_LIST=..\adapt\prt_d1l_JCP2016_REF.xlsm
+rem Note: If the XLS is outside of DIOGen\adapt (e.g. inside the system/imp/adapt),
+rem       then the buttons inside the XLS do not work.
+set DIO_MAKEFILE=pkg/driver/pkg/dio/tool/DIOGen/adapt
+
+rem ------- DIV - BMW - STDCORE specific ----------
+rem NOTE: enable checking StdCore directory:
+REM set BMW_STANDARD_CHECK=1
+rem NOTE: set the path to Cygwin used for StdCore:
+REM set DIR_CYGWIN_BIN_STDCORE=%DIR_CYGWIN_1_7_15_BIN%
+rem NOTE: set relative path to StdCore directory from project root:
+REM set DIR_BMW_STANDARD_CORE=pkg
+rem NOTE: set name of your microcontroller:
+REM set BMW_STANDARD_CORE_MICROCONTROLLER=V850E
+rem NOTE: set name of your target (control unit):
+REM set BMW_STANDARD_CORE_TARGET=target
+rem NOTE: set relative path to StdCore target/application/bootloader directory from project root:
+REM set DIR_BMW_STANDARD_CORE_TARGET=%DIR_BMW_STANDARD_CORE%\%BMW_STANDARD_CORE_MICROCONTROLLER%\%BMW_STANDARD_CORE_TARGET%
+REM set DIR_BMW_STANDARD_CORE_APPLICATION=%DIR_BMW_STANDARD_CORE_TARGET%\application
+REM set DIR_BMW_STANDARD_CORE_BOOTLOADER=%DIR_BMW_STANDARD_CORE_TARGET%\bootloader
+
+rem ------- Arbor TOOL ----------------------------
+set ARBOR_ENV_GEN=adapt\gen\arbor\ArborCfg.bat
+if exist "%ARBOR_ENV_GEN%" (
+  call %ARBOR_ENV_GEN% || exit /b 1
+)
+
+rem #################### DO NOT CROSS THIS LINE ###############################
+set SETENV_EXEC=1
+
+rem NOTE: set logical names of the target platform and language tool. DO NOT CHANGE by hand
+set TRGTPLTFRM=NEC_V850
+set LNGGTL=Multi2000
+
+rem NOTE: Uncomment following line if StdCore project environment settings is to be set based on setenv.bat
+REM if not "%SRCBAT_EXEC%"=="1" ( pushd "%CD%" &cd "%DIR_BMW_STANDARD_CORE%\%BMW_STANDARD_CORE_MICROCONTROLLER%" &call src.bat &popd )
+
+REM NOTE: Uncomment following line to activate make scripts logging (if-check is used to prevent opening the logfile multiple times)
+REM if not "%SCRIPTSLOG%"=="OFF" set SCRIPTSLOG=1
+
+rem generate project specific goMSVC.bat instead of default (called by install.bat):
+set GEN_USER_GOMSVC=ide\adapt\extras\gen_user_gomsvc.bat
+
+rem ===========================================================================
+

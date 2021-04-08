@@ -1,0 +1,272 @@
+rem
+rem This file must be located in
+rem         %windir%                  (up to WinXP)
+rem         %ALLUSERSPROFILE%         (WinVista, Win7, Win8)
+rem directory to have any effect.
+rem It lists what is installed at your PC and is read by all project's setenv.bat.
+rem It maps "logical paths" (represented by environment variable) to physical path.
+rem
+rem Please check that pathes apply to your machine. If not, change them ! Provide empty
+rem definitions for what is not installed.          =====================
+rem
+rem IMPORTANT: Last nonempty line of this file must end with newline (<CR><LF>)
+rem IMPORTANT: Path settings may not have slash or backslash as the ending character
+rem
+rem To get scripts running you have to specify at least
+rem - one DIR_CYGWIN_..._BIN / DIR_MSYS_..._BIN
+rem - one DIR_PERL_..._BIN       (MSVC Scripts V3/4.x)
+rem - one DIR_MULTI_...          when compiling with Green Hills tools
+rem - one DIR_SOFTUNE_V3_...     when compiling with Fujitsu SWB V3 tools
+rem - one DIR_SOFTUNE_V6_...     when compiling with Fujitsu SWB V6 tools
+rem - one DIR_IAR78K0_...        when compiling with IAR EW tools
+rem and refer to them in your project's setenv.bat
+rem
+rem If problems occur check the MSVC_SCRIPTS_USER_MANUAL.chm or ask
+rem
+rem               Ladislav.Cezner@continental-corporation.com
+rem            or Matthias.Fecher@continental-corporation.com
+rem
+
+rem ______________________  Global settings: ___________________________________________
+
+set PARALLEL_PROCESSES_HOST=8
+
+set PARALLEL_PROCESSES_QA_HOST=%PARALLEL_PROCESSES_HOST%
+set BATCH_PAUSE_HOST=1
+
+
+rem ______________________  Common settings: ___________________________________________
+
+
+
+
+
+
+set VARIANT=C:/aici/Proseco/jre-7u75-windows-x64.exe
+
+set DIR_UNDERSTAND_4_0_832=C:/aici/UnderstandC/Understand-4.0.832-Windows-64bit.exe
+
+rem DIR_DA=C:\Program Files\Java
+
+set DIR_7ZIP_160=C:/aici/7zip/7z1602-x64.exe
+REM set DIR_TEST=C:\Program Files\SAP
+
+REM set DIR_DEVSTUDIO_NET_8=C:\Program Files (x86)\Microsoft Visual Studio 8\Common7\IDE
+REM set DIR_DEVSTUDIO_NET_9=C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\IDE
+set DIR_DEVSTUDIO_NET_12=C:\LegacyApp\VisualStudio2013\Common7\IDE
+set DIR_MSBUILD_12_0_BIN=C:\Program Files (x86)\MSBuild\12.0\Bin
+
+
+REM  ~ obsolete (WinXP only) ~ set DIR_PERL_5_005_BIN=C:\TOOL\Common\Perl\bin
+
+REM set DIR_PERL_5_12_4_1205_BIN=C:\Tools\Common\Perl_5.12.4\bin
+set DIR_PERL_5_12_4_BIN=C:\Tools\Common\Perl_5.12.4\bin
+
+rem ~ obsolete (WinXP only) ~ set DIR_CYGWIN_1_1_16_BIN=C:\TOOL\Common\Cygnus\cygwin-1.1.16\bin
+set DIR_CYGWIN_1_7_32_BIN=C:\Tools\Common\cygwin1_7_32\bin
+set DIR_MSYS_1_0_17_BIN=C:\Tools\Common\msys\msys-1.0.17\bin
+set DIR_LLVM_6_0_1_WIN64_BIN=C:\Tools\Common\LLVM\bin
+
+set DIR_PYTHON_2_7_3=C:\Tools\Common\python27
+set DIR_PYTHON_3_4_4=C:\Tools\Common\Python34
+set DIR_PYTHON_3_7_1=C:\Tools\Common\Portable_Python_3.7.1_x64\App\Python
+
+set DIR_JAVA_1_7_0_75_BIN=C:\Tools\Common\Java\bin
+
+set DIR_CMAKE_2_8_12_BIN=C:\Tools\Common\CMake2.8\bin
+
+
+set DIR_UNDERSTAND_3_1=C:\TOOL\common\UnderstandC\v3.1.689
+
+set DIR_QAC_7_1=C:\Tools\Common\QAC\QAC-7.1
+set DIR_QAC_8_1_2=C:\Tools\Common\QAC\QAC-8.1.2-R
+
+set DIR_QACPP_2_5=C:\TOOL\Common\QACPP\v2.5
+
+
+set DIR_CTC_6_55=C:\Tools\Common\CTC
+set DIR_CTC_7_31=C:\Tools\Common\CTC\v7_3_1
+
+set DIR_CASSI_2_17=C:\TOOL\Common\CAssi\v2.17
+
+set DIR_IMAGIX_7_47=C:\TOOL\Common\Imagix\v7.4.7
+
+set DIR_STACKVIEWER_2_03=C:\TOOL\Common\StackAnalysisViewer\v2.3.20.28
+
+set DIR_MSACCESS_2007=C:\Program Files (x86)\Microsoft Office\Office12
+
+set DIR_EASYCASE_6_5=M:\EASY_CPP\6_5
+
+set DIR_MKS_10_1=C:\Program Files (x86)\Integrity\IntegrityClient10.1
+
+set DIR_TOTALCMD=C:\TOOL\Common\totalcmd
+
+set DIR_BEYONDCOMPARE_3=C:\Program Files (x86)\Beyond Compare 3
+
+set DIR_DOXYGEN_1_74=C:\Program Files (x86)\doxygen
+set DIR_MIKTEX_2_9=C:\Program Files (x86)\MiKTeX 2.9
+set DIR_GRAPHVIZ_2_36_BIN=C:\Tools\Common\Graphviz2.36\bin
+
+set DIR_PUTTY=C:\TOOL\common\putty
+
+set DIR_OMF2SYM_2_8=C:\TOOL\common\Symbolgenerator\omf2sym16\v2.8
+set DIR_UBROFLST_1_12=C:\TOOL\common\Symbolgenerator\ubroflst\V1.12
+set DIR_OMF32SYM_1_0_3=C:\TOOL\common\Symbolgenerator\omf32sym\V1.0.3
+set DIR_DWARF2SYM_1_0_21=C:\Tool\common\Symbolgenerator\dwarf2sym\v1.0.21
+REM ~ set DIR_DBG2SYM_2013_5=C:\Tool\common\Symbolgenerator\dbg2sym\v2013.5_rev500495
+set DIR_DBG2SYM_REV519024=C:\Tool\common\Symbolgenerator\dbg2sym\v2013.5_rev519024
+
+set TEXTEDITOR_TOOL_HOST=%windir%\notepad.exe
+rem set TEXTEDITOR_TOOL_HOST=C:\Program Files (x86)\SciTE\SciTE.exe
+
+rem set DIR_GCC_TDM_4_9_2=c:\Tools\tdm-gcc-4.9.2\4.9.2
+set DIR_GCC_TDM_4_9_2=C:\Tools\Common\tdm-gcc-4.9.2\4.9.2
+
+rem ______________________  ARM specific: ______________________________________________
+
+rem set DIR_MULTI_ARM_5_05=C:\TOOL\ARM\GHS\v5.0.5
+rem set DIR_MULTI_ARM_6_14_2013_14=C:\TOOL\ARM\GHS\v6.1.4_2013.1.4
+set DIR_MULTI_ARM_6_14_2013_54=C:\TOOL\ARM\GHS\v6.1.4_2013.5.4
+set DIR_MULTI_ARM_6_14_2013_54_patch_2015_05_05=C:\Tool\ARM\GHS\v6.1.4_2013.5.4_patch_2015_05_05
+set DIR_MULTI_ARM_6_14_2013_54_patch_2015_09_21=C:\Tool\ARM\GHS\v6.1.4_2013.5.4_patch_2016_09_21
+set DIR_MULTI_ARM_6_14_2013_54_patch_2017_01_31=C:\Tool\ARM\GHS\v6.1.4_2013.5.4_patch_2017_01_31
+
+set DIR_ARM_OIL_TOOL_V2_05=
+
+set DIR_ARM_CAN_TOOL_V2_66=
+
+
+rem ______________________  V850 specific: _____________________________________________
+
+REM set DIR_MULTI_V850_4_07=C:\TOOL\V850\GHS\v4.0.7\v800407
+REM set DIR_MULTI_V850_5_30=C:\Tools\V850\GHS\multi530
+set DIR_MULTI_V850_6_14_2013_55=C:\Tool\V850\GHS\multi_614_2013.5.5
+REM set DIR_MULTI_V850_5_30_patch_2016_06_08=c:\Tool\V850\GHS\multi530_patch_2016_06_08
+set DIR_MULTI_V850_6_14_2013_55_patch_2016_04_08=C:\Tools\ghs\multi_614
+set DIR_MULTI_V850_6_1_4_2013_5_5_PATCH_2017_10_19=C:\Tools\ghs\multi_614_2017_10_19
+set DIR_MULTI_V850_7_1_4_2017_1_5_patch_2018_08_06=C:\Tools\ghs\multi714_2017.1.5_patch_2018_08_06
+set DIR_MULTI_V850_7_1_4_2017_1_5_PATCH_2018_01_03=C:\Tools\ghs\multi714_2017_1_5_patch_2018_01_03
+set DIR_MULTI_V850_7_1_4_2017_1_5=C:\Tools\ghs\multi714_2017_1_5
+
+set DIR_NECV850_OIL_TOOL_V3_03=
+
+set DIR_NECV850_CAN_TOOL_V2_66=
+
+set DIR_NECV850_FLASH_TOOL_V1_50=C:\TOOL\V850\NEC\PG-FPL\V1.50
+set DIR_NECV850_FLASH_TOOL_V2_18=C:\TOOL\V850\NEC\PG-FP4\V2.18
+
+
+rem ______________________  PPC specific: ______________________________________________
+
+set DIR_MULTI_PPC_5_17=C:\TOOL\PPC\GHS\v5.1.7
+set DIR_MULTI_PPC_6_14_2013_54=C:\TOOL\PPC\GHS\v6.1.4_2013.5.4
+
+set DIR_PPC_OIL_TOOL_V3_03=
+
+set DIR_PPC_CAN_TOOL_V2_66=
+
+
+rem ______________________  MIPS specific: _____________________________________________
+
+set DIR_MULTI_MIPS_4_21=C:\TOOL\MIPS\GHS\v4.2.1\mips421
+set DIR_MULTI_MIPS_6_14_2013_54=C:\TOOL\MIPS\GHS\v6.1.4_2013.5.4
+
+set DIR_MIPS_OIL_TOOL_V3_03=
+
+set DIR_MIPS_CAN_TOOL_V2_66=
+
+
+rem ______________________  SH specific: _______________________________________________
+
+set DIR_MULTI_SH_5_30=C:\TOOL\SH\GHS\v5.3.0
+set DIR_MULTI_SH_6_14_2013_55=C:\TOOL\SH\GHS\v6.1.4_2013.5.5
+
+set DIR_REESH_OIL_TOOL_V5_05=C:\TOOL\SH\Vector\MICROSAR_OS_SH2_v5.05
+
+
+rem ______________________  FJ16 specific: _____________________________________________
+
+set DIR_SOFTUNE_V3_300020r01=C:\TOOL\FJ16\SoftuneV3\rev300020r01
+set DIR_SOFTUNE_V3_300023=C:\TOOL\FJ16\SoftuneV3\rev300023
+
+set DIR_F2MC16_OIL_TOOL_V3_03=
+
+set DIR_F2MC16_CAN_TOOL_V2_64=
+
+set DIR_F2MC16_FLASH_TOOL_V2_6=C:\TOOL\FJ32\Flashprg\Flashloader\v2.6
+
+
+rem ______________________  FJ32 specific: _____________________________________________
+
+set DIR_SOFTUNE_V6_600010=C:\TOOL\FJ32\SoftuneV6\rev600010
+set DIR_SOFTUNE_V6_600012=C:\TOOL\FJ32\SoftuneV6\rev600012
+set DIR_SOFTUNE_V6_600013=C:\TOOL\FJ32\SoftuneV6\rev600013
+
+set DIR_MULTI_FR_5_10=C:\TOOL\FJ32\GHS\v5.1.0
+
+set DIR_FR32_OIL_TOOL_V0_00=
+
+set DIR_FR32_CAN_TOOL_V0_00=
+
+set DIR_FR32_FLASH_TOOL_V2_6=C:\TOOL\FJ32\Flashprg\Flashloader\v2.6
+
+
+rem ______________________  78K0/RL78 specific: ________________________________________
+
+set DIR_IAR78K0_CURRENT=C:\TOOL\ASSP3\IAR\CURRENT
+set DIR_IAR78K0_4_71=C:\TOOL\NEC78K0\IAR\v4.71
+set DIR_IAR78RL_1_30=C:\TOOL\NEC78K0\IAR\v1.30
+
+rem set DIR_NEC78K0_DEBUG_2_30_BIN=C:\TOOL\NEC78K0\IE-78K0-NS-A\V2.30\BIN
+set DIR_NEC78K0_DEBUG_3_61_BIN=C:\TOOL\NEC78K0\REE\Debugger_ID78k0R-QB\ID78K0R-QB\V3.61\bin
+
+set DIR_NEC78K0_OIL_TOOL_V0_00=
+
+set DIR_NEC78K0_CAN_TOOL_V2_60_01=C:\TOOL\NEC78K0\CAN_tool\V2.60.01
+
+set DIR_NEC78K0_SYMSORT_TOOL_V2_14=C:\TOOL\common\Symbolgenerator\symsort\V2.14
+
+set DIR_NEC78K0_FLASH_TOOL_V3_04=C:\TOOL\NEC78K0\flashMaster\V3.04
+
+
+rem ______________________  MSP430 specific: __________________________________________
+
+set DIR_IARMSP430_5_52=C:\Tool\MSP430\IAR\v5.52
+set DIR_IARMSP430_5_60=C:\Tool\MSP430\IAR\v5.60
+
+
+rem ______________________  Target specific: ___________________________________________
+
+set MY_IPADDR=10.0.85.34
+set TARGET_IPADDR_IMX6=10.217.197.253
+set TARGET_SERDEV_IMX6=COM3
+
+
+rem ______________________  Other/testing: _____________________________________________
+
+REM set DIR_GNUTOOLS_HOST=C:\MinGW
+
+rem ______________________ GIT _________________________________________________________
+
+
+set DIR_GIT_BIN_LOCAL=%LOCALAPPDATA%\Atlassian\SourceTree\git_local\bin
+
+rem ______________________ 205 non-mopf _________________________________________________________
+
+set DIR_7ZIP_920=C:\Program Files\7-Zip
+
+rem set DIR_UNIXTOOLS_BIN_CYGWIN=C:\ProgramData\cygwin64\bin
+
+rem ########################### END OF FILE ############################################
+set DIR_TOOL_ROOT=c:\tool
+
+rem ______________________  Common specific: ______________________________________________
+
+set DIR_CALLSHELL_1_0=c:\tool\common\callshell\v1.0
+set GHS_LocLicSet=INSTALLED
+
+rem ----------- CallShell -----------------
+set DIR_CALLSHELL_1_6_0=C:\Tools\Common\CallShell_1_6_0
+set TC_CREATE_PREBUILT=1
+set TC_USE_PREBUILT=1
+set TC_FORCETOOLRUN=0
